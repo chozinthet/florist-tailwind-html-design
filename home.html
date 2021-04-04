@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florist</title>
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@500&family=Open+Sans:wght@600&display=swap" rel="stylesheet">   
+    <!-- TAILWIND CSS -->
+    <link rel="stylesheet" href="tailwind.css">
+
+    <script defer src="./node_modules/@fortawesome/fontawesome-free/js/brands.js"></script>
+    <script defer src="./node_modules/@fortawesome/fontawesome-free/js/solid.js"></script>
+    <script defer src="./node_modules/@fortawesome/fontawesome-free/js/fontawesome.js"></script>
+</head>
+<body>
+
+    <div class="relative">
+        <!-- SIDEBAR MENU FOR MOBILE -->
+        <div id="sidebar" class="py-8 fixed w-60 h-screen bg-pink-500 transition duration-1000 z-50">
+            <div class="flex justify-end pb-6 pr-8">
+                <button onclick="closeMenu()" class="focus:border-none focus:outline-none text-2xl text-white">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <ul class="flex-col text-white">
+                <li class="" onclick="closeMenu()">
+                    <a href="#container" class="block transition duration-500 py-3 pl-8 border-b-2 border-pink-400 hover:bg-pink-400">
+                        Home
+                    </a>
+                </li>
+                <li class="" onclick="closeMenu()">
+                    <a href="#about" class="block transition duration-500 py-3 pl-8 border-b-2 border-pink-400 hover:bg-pink-400">
+                        About
+                    </a>
+                </li>
+                <li class="" onclick="closeMenu()">
+                    <a href="#service" class="block transition duration-500 py-3 pl-8 border-b-2 border-pink-400 hover:bg-pink-400">
+                        Service
+                    </a>
+                </li>
+                <li class="" onclick="closeMenu()">
+                    <a href="#shop" class="block transition duration-500 py-3 pl-8 border-b-2 border-pink-400 hover:bg-pink-400">
+                        Shop
+                    </a>
+                </li>
+                <li class="" onclick="closeMenu()">
+                    <a href="#blog" class="block transition duration-500 py-3 pl-8 border-b-2 border-pink-400 hover:bg-pink-400">
+                        Blog
+                    </a>
+                </li>
+                <li class="" onclick="closeMenu()">
+                    <a href="#contact" class="block transition duration-500 py-3 pl-8 border-b-2 border-pink-400 hover:bg-pink-400">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Overlay -->
+        <div id="overlay" onclick="closeMenu()" class="z-40 fixed cursor-pointer w-screen h-screen top-0 bg-black opacity-70"></div>
+        
+        <div id="container">
+            <!-- Up button -->
+            <button class="h-12 w-12 flex items-center justify-center z-30 fixed bottom-8 right-8 shadow-lg focus:border-none focus:outline-none bg-pink-500 text-red-100 rounded-full hover:bg-pink-600">
+                <a href="#container" class="text-3xl"><i class="fas fa-angle-up"></i></a>
+            </button>
+            <!-- MENU BAR -->
+            <div id="menu-bar" class="bg-white flex items-center justify-between px-4 md:px-8 lg:px-16 xl:px-24 py-8 sticky top-0 z-20">
+                <a href="#" id="logo" class="relative font-bold text-2xl md:text-4xl text-pink-500">
+                    Florist
+                    <span class="absolute font-light text-sm"><i class="fas fa-fan"></i></span>
+                </a>
+                <div class="inline-block lg:hidden ">
+                    <button onclick="openMenu()" class="focus:border-none focus:outline-none text-xl text-pink-500"><i class="fas fa-bars"></i></button>
+                </div>
+                <div class="lg:flex items-center justify-between space-x-8 hidden">
+                    <ul class="flex items-center space-x-8">
+                        <li><a href="#container" class="hover:text-pink-500 transition duration-300">Home</a></li>
+                        <li><a href="#about" class="hover:text-pink-500 transition duration-300">About</a></li>
+                        <li><a href="#service" class="hover:text-pink-500 transition duration-300">Service</a></li>
+                        <li><a href="#shop" class="hover:text-pink-500 transition duration-300">Shop</a></li>
+                        <li><a href="#service" class="hover:text-pink-500 transition duration-300">Service</a></li>
+                        <li><a href="#blog" class="hover:text-pink-500 transition duration-300">Blog</a></li>
+                        <li><a href="#contact" class="hover:text-pink-500 transition duration-300">Contact</a></li>
+                    </ul>
+                    <button class="hover:text-pink-500 text-lg transition duration-300"><i class="fas fa-search"></i></button>
+                    <button class="hover:text-pink-500 text-lg transition duration-300"><i class="fas fa-heart"></i></button>
+                    <button class="hover:text-pink-500 text-lg transition duration-300"><i class="fas fa-cart-plus"></i></button>
+                </div>    
+            </div>
+            <!-- HEADER -->
+            <div id="header" class="px-4 md:px-8 lg:px-16 xl:px-24 relative transition duration-1000 flex items-center h-screen">
+                <div class="flex-col space-y-8">
+                    <p class="text-xs lg:text-lg tracking-widest text-yellow-600">FRESH FLOWER AND GIFT SHOP</p>
+                    <div class="flex-col space-y-4 font-extrabold text-purple-900">
+                        <h1 class="text-2xl md:text-4xl lg:text-5xl tracking-widest">Making Beautiful</h1>
+                        <h1 class="text-2xl md:text-4xl lg:text-5xl tracking-widest">flowers a part</h1>
+                        <h1 class="text-2xl md:text-4xl lg:text-5xl tracking-widest">of your life</h1>
+                    </div>
+                    <button class="text-sm md:text-base shadow-md md:shadow-lg focus:outline-none bg-pink-500 text-white px-4 md:px-6 py-2 md:py-3 rounded-full hover:bg-pink-600">
+                        SHOP NOW
+                    </button>
+                </div>
+                <span id="bg-img-text" class="opacity-80 absolute bottom-0 right-0 bg-yellow-600 text-white">
+                    <a href="#">Photo by Karolina Grabowska from Pexels</a>
+                </span>
+            </div>
+            <!-- ABOUT SECTION -->
+            <div id="about" class="px-4 md:px-8 lg:px-16 xl:px-24 md:flex md:justify-between pt-40 md:items-center space-y-8 md:space-y-0 md:space-x-8 lg:space-x-24 text-gray-700">
+                <div class="flex-col space-y-4 text-center md:text-left">
+                    <h1 class="text-lg md:text-2xl font-bold"><span class="text-pink-500">100%</span>  Freshness </h1>
+                    <p class="text-sm md:text-base leading-loose">Most people are unaware of the less common flower</p>
+                </div>
+                <div class="flex-col space-y-4 text-center md:text-left">
+                    <h1 class="text-lg md:text-2xl font-bold">Made by Artist</h1>
+                    <p class="text-sm md:text-base leading-loose">Most people are unaware of the less common flower</p>
+                </div>
+                <div class="flex-col space-y-4 text-center md:text-left">
+                    <h1 class="text-lg md:text-2xl font-bold">Own courier</h1>
+                    <p class="text-sm md:text-base leading-loose">Most people are unaware of the less common flower</p>
+                </div>
+            </div>
+            
+            <!-- TOTAL FLOWER SECTION -->
+            <div class="px-4 md:px-8 lg:px-16 xl:px-24 flex flex-wrap lg:flex-nowrap justify-center lg:space-x-8 pt-40">
+                <div class="relative w-56 md:w-60 m-8 md:m-12 lg:m-0 lg:w-1/4 group">
+                    <img src="./img/Cactus.jpg" alt="img">
+                    <div class="bg-pink-500 text-white  p-2 text-center absolute bottom-8 w-full opacity-80 group-hover:opacity-95">
+                        <h1 class="text-xl md:text-2xl font-bold">Cactus flower</h1>
+                        <a href="#" class="text-sm md:text-base group-hover:underline">Photo by Borja Lopez from Pexels</a>
+                    </div>
+                </div>
+                <div class="relative w-56 md:w-60 m-8 md:m-12 lg:m-0 lg:w-1/4 group">
+                    <img src="./img/fresh-flower.jpg" alt="img">
+                    <div class="bg-pink-500 text-white  p-2 text-center absolute bottom-8 w-full opacity-80 group-hover:opacity-95">
+                        <h1 class="text-xl md:text-2xl font-bold">Fresh Flower</h1>
+                        <a href="#" class="text-sm md:text-base group-hover:underline">Photo by Karolina Grabowska from Pexels</a>
+                    </div>
+                </div>
+                <div class="relative w-56 md:w-60 m-8 md:m-12 lg:m-0 lg:w-1/4 group">
+                    <img src="./img/funiture-plant.jpg" alt="img">
+                    <div class="bg-pink-500 text-white  p-2 text-center absolute bottom-8 w-full opacity-80 group-hover:opacity-95">
+                        <h1 class="text-xl md:text-2xl font-bold">Funiture Plant</h1>
+                        <a href="#" class="text-sm md:text-base group-hover:underline">Photo by Luca Morvillo from Pexels</a>
+                    </div>
+                </div>
+                <div class="relative w-56 md:w-60 m-8 md:m-12 lg:m-0 lg:w-1/4  group">
+                    <img src="./img/succulent.jpg" alt="img">
+                    <div class="bg-pink-500 text-white  p-2 text-center absolute bottom-8 w-full opacity-80 group-hover:opacity-95">
+                        <h1 class="text-xl md:text-2xl font-bold">Succulent Plant</h1>
+                        <a href="#" class="text-sm md:text-base group-hover:underline">Photo by Scott Webb from Pexels</a>
+                    </div>
+                </div>
+            </div> 
+
+            <!-- ABOUT US SECTION -->
+            <div class="px-4 md:px-8 lg:px-16 xl:px-24 pt-40 text-center md:text-left md:flex md:items-center md:justify-between">
+                <div class="w-full md:w-1/3 flex-col space-y-2 md:space-y-8 pb-4">
+                    <h1 class="text-2xl md:text-4xl lg:text-5xl text-pink-500 font-bold">About Us</h1>
+                    <h1 class="text-lg md:text-2xl text-gray-800 font-bold leading-loose">We provide all kinds of fresh flower services</h1>
+                </div>
+                <div class="w-full md:w-2/3 px-12">
+                    <p class="text-gray-800 text-sm md:text-base leading-loose">For Heather Henson, of Boreal Blooms in Cold Lake, Alberta, Canada, growing flowers that can be 
+                        dried and incorporated into late fall and winter floral arrangements has been a game-changer. 
+                        During her growing season, this farmer-florist relies on a vivid palette of annuals, perennials 
+                        and ornamental grasses to supply her studio.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Our Flower new Arrival -->
+            <div id="shop" class="px-4 md:px-8 lg:px-16 xl:px-24 py-40">
+                <div class="flex-col space-y-2 md:space-y-8 pb-4 md:pb-12 ">
+                    <h1 class="text-2xl md:text-4xl lg:text-5xl text-pink-500 font-bold text-center">Our Flower</h1>
+                    <h1 class="text-lg md:text-2xl text-gray-800 font-bold text-center">New Arrival</h1>
+                    <div class="flex justify-center space-x-3 md:space-x-4 lg:space-x-8">
+                        <button class="hover:bg-pink-500 py-2 px-1 md:px-3 rounded-full hover:shadow-xl text-sm md:text-base text-bold hover:text-white transition duration-200 text-gray-800">All</button>
+                        <button class="hover:bg-pink-500 py-2 px-1 md:px-3 rounded-full hover:shadow-xl text-sm md:text-base text-bold hover:text-white transition duration-200 text-gray-800">Gift combos</button>
+                        <button class="hover:bg-pink-500 py-2 px-1 md:px-3 rounded-full hover:shadow-xl text-sm md:text-base text-bold hover:text-white transition duration-200 text-gray-800">Basket of flower</button>
+                        <button class="hover:bg-pink-500 py-2 px-1 md:px-3 rounded-full hover:shadow-xl text-sm md:text-base text-bold hover:text-white transition duration-200 text-gray-800">Flower shelf</button>
+                        <button class="hover:bg-pink-500 py-2 px-1 md:px-3 rounded-full hover:shadow-xl text-sm md:text-base text-bold hover:text-white transition duration-200 text-gray-800">Flower box</button>
+                    </div>
+                </div>
+                <div class="flex flex-wrap lg:flex-nowrap justify-center lg:space-x-16">
+                    <div class="w-56 md:w-60 m-8 md:m-12 lg:m-0 lg:w-1/5 relative group hover:shadow-2xl">
+                        <span class="bg-purple-900 text-white text-sm px-2 py-1 absolute top-2 left-2">New</span>
+                        <img src="./img/white-plant.jpg" alt="" class="">
+                        <!-- White flower plant -->
+                        <div class="absolute bottom-9 px-1 py-4 text-center text-xs bg-yellow-600 opacity-70 text-white">
+                            <a href="#" class="group-hover:underline">Photo by RODNAE Productions from Pexels</a>
+                        </div>
+                        <div class="absolute -bottom-4 flex justify-center space-x-4 w-full">
+                            <div class="h-9 w-9 flex items-center justify-center rounded-full bg-pink-500 hover:bg-pink-600 hover:shadow-inner text-white transition duration-200 "><a href="#" class="text-lg"><i class="fas fa-search"></i></a></div>
+                            <div class="h-9 w-9 flex items-center justify-center rounded-full bg-pink-500 hover:bg-pink-600 hover:shadow-inner text-white transition duration-200 "><a href="#" class="text-lg"><i class="fas fa-heart"></i></a></div>
+                            <div class="h-9 w-9 flex items-center justify-center rounded-full bg-pink-500 hover:bg-pink-600 hover:shadow-inner text-white transition duration-200 "><a href="#" class="text-lg"><i class="fas fa-cart-plus"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="w-56 md:w-60 m-8 md:m-12 lg:m-0 lg:w-1/5 relative group hover:shadow-2xl">
+                        <span class="bg-purple-900 text-white text-sm px-2 py-1 absolute top-2 left-2">New</span>
+                        <img src="./img/white-plant.jpg" alt="" class="">
+                        <!-- White flower plant -->
+                        <div class="absolute bottom-9 px-1 py-4 text-center text-xs bg-yellow-600 opacity-70 text-white">
+                            <a href="#" class="group-hover:underline">Photo by RODNAE Productions from Pexels</a>
+                        </div>
+                        <div class="absolute -bottom-4 flex justify-center space-x-4 w-full">
+                            <div class="h-9 w-9 flex items-center justify-center rounded-full bg-pink-500 hover:bg-pink-600 hover:shadow-inner text-white transition duration-200 "><a href="#" class="text-lg"><i class="fas fa-search"></i></a></div>
+                            <div class="h-9 w-9 flex items-center justify-center rounded-full bg-pink-500 hover:bg-pink-600 hover:shadow-inner text-white transition duration-200 "><a href="#" class="text-lg"><i class="fas fa-heart"></i></a></div>
+                            <div class="h-9 w-9 flex items-center justify-center rounded-full bg-pink-500 hover:bg-pink-600 hover:shadow-inner text-white transition duration-200 "><a href="#" class="text-lg"><i class="fas fa-cart-plus"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="w-56 md:w-60 m-8 md:m-12 lg:m-0 lg:w-1/5 relative group hover:shadow-2xl">
+                        <span class="bg-purple-900 text-white text-sm px-2 py-1 absolute top-2 left-2">New</span>
+                        <img src="./img/white-plant.jpg" alt="" class="">
+                        <!-- White flower plant -->
+                        <div class="absolute bottom-9 px-1 py-4 text-center text-xs bg-yellow-600 opacity-70 text-white">
+                            <a href="#" class="group-hover:underline">Photo by RODNAE Productions from Pexels</a>
+                        </div>
+                        <div class="absolute -bottom-4 flex justify-center space-x-4 w-full">
+                            <div class="h-9 w-9 flex items-center justify-center rounded-full bg-pink-500 hover:bg-pink-600 hover:shadow-inner text-white transition duration-200 "><a href="#" class="text-lg"><i class="fas fa-search"></i></a></div>
+                            <div class="h-9 w-9 flex items-center justify-center rounded-full bg-pink-500 hover:bg-pink-600 hover:shadow-inner text-white transition duration-200 "><a href="#" class="text-lg"><i class="fas fa-heart"></i></a></div>
+                            <div class="h-9 w-9 flex items-center justify-center rounded-full bg-pink-500 hover:bg-pink-600 hover:shadow-inner text-white transition duration-200 "><a href="#" class="text-lg"><i class="fas fa-cart-plus"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="w-56 md:w-60 m-8 md:m-12 lg:m-0 lg:w-1/5 relative group hover:shadow-2xl">
+                        <span class="bg-purple-900 text-white text-sm px-2 py-1 absolute top-2 left-2">New</span>
+                        <img src="./img/white-plant.jpg" alt="" class="">
+                        <!-- White flower plant -->
+                        <div class="absolute bottom-9 px-1 py-4 text-center text-xs bg-yellow-600 opacity-70 text-white">
+                            <a href="#" class="group-hover:underline">Photo by RODNAE Productions from Pexels</a>
+                        </div>
+                        <div class="absolute -bottom-4 flex justify-center space-x-4 w-full">
+                            <div class="h-9 w-9 flex items-center justify-center rounded-full bg-pink-500 hover:bg-pink-600 hover:shadow-inner text-white transition duration-200 "><a href="#" class="text-lg"><i class="fas fa-search"></i></a></div>
+                            <div class="h-9 w-9 flex items-center justify-center rounded-full bg-pink-500 hover:bg-pink-600 hover:shadow-inner text-white transition duration-200 "><a href="#" class="text-lg"><i class="fas fa-heart"></i></a></div>
+                            <div class="h-9 w-9 flex items-center justify-center rounded-full bg-pink-500 hover:bg-pink-600 hover:shadow-inner text-white transition duration-200 "><a href="#" class="text-lg"><i class="fas fa-cart-plus"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="w-56 md:w-60 m-8 md:m-12 lg:m-0 lg:w-1/5 relative group hover:shadow-2xl">
+                        <span class="bg-purple-900 text-white text-sm px-2 py-1 absolute top-2 left-2">New</span>
+                        <img src="./img/white-plant.jpg" alt="" class="">
+                        <!-- White flower plant -->
+                        <div class="absolute bottom-9 px-1 py-4 text-center text-xs bg-yellow-600 opacity-70 text-white">
+                            <a href="#" class="group-hover:underline">Photo by RODNAE Productions from Pexels</a>
+                        </div>
+                        <div class="absolute -bottom-4 flex justify-center space-x-4 w-full">
+                            <div class="h-9 w-9 flex items-center justify-center rounded-full bg-pink-500 hover:bg-pink-600 hover:shadow-inner text-white transition duration-200 "><a href="#" class="text-lg"><i class="fas fa-search"></i></a></div>
+                            <div class="h-9 w-9 flex items-center justify-center rounded-full bg-pink-500 hover:bg-pink-600 hover:shadow-inner text-white transition duration-200 "><a href="#" class="text-lg"><i class="fas fa-heart"></i></a></div>
+                            <div class="h-9 w-9 flex items-center justify-center rounded-full bg-pink-500 hover:bg-pink-600 hover:shadow-inner text-white transition duration-200 "><a href="#" class="text-lg"><i class="fas fa-cart-plus"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order now sectin -->
+            <div id="order-section-bg-img" class="flex items-center h-96 px-4 md:px-8 lg:px-16 xl:px-24 relative ">
+                <div class="flex-col space-y-8">
+                    <h1 class="text-2xl md:text-4xl lg:text-5xl text-gray-800 font-bold">Let Our flowers </h1>
+                    <h1 class="text-lg md:text-2xl text-pink-500 font-bold">make your party more meaningful</h1>
+                    <button class="text-sm md:text-base shadow-md md:shadow-lg focus:outline-none bg-pink-500 text-white px-4 md:px-6 py-2 md:py-3 rounded-full hover:bg-pink-600">
+                        ORDER NOW
+                    </button>
+                </div>
+                <a href="https://www.pexels.com/@karolina-grabowska" class="opacity-80 absolute bottom-0 right-0 bg-yellow-600 text-white">
+                    Photo by Karolina Grabowska from Pexels
+                </a>
+            </div>
+
+            <!-- FLORIST TRICKS -->
+            <div id="service" class="px-4 md:px-8 lg:px-16 xl:px-24 pt-40 flex-col space-y-8">
+                <h1 class="text-2xl md:text-4xl lg:text-5xl text-pink-500 font-bold ">Florist Tricks</h1>
+                <div class="flex flex-wrap lg:flex-nowrap justify-center lg:space-x-16 lg:items-center">
+                    <div id="florist-tricks-card" class="w-56 md:w-72 m-8 lg:m-0 lg:w-1/3 group shadow-xl hover:shadow-2xl">
+                        <img src="./img/choose-color.jpg" alt="flower image">
+                        <div class="flex-col text-center p-4 space-y-4">
+                            <div class="group-hover:underline">
+                                <a href="#" class="text-lg md:text-2xl text-center">Choose flower color for type of party</a>
+                            </div>
+                            <div class="group-hover:text-pink-500">
+                                <a href="https://www.pexels.com/@fotografierende" class="text-sm md:text-base hover:underline">Photo by fotografierende from Pexels</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="florist-tricks-card" class="w-56 md:w-72 m-8 lg:m-0 lg:w-1/3 group shadow-xl hover:shadow-2xl">
+                        <img src="./img/daily-funiture.jpg" alt="flower image">
+                        <div class="flex-col text-center p-4 space-y-4">
+                            <div class="group-hover:underline">
+                                <a href="#" class="text-lg md:text-2xl text-center">Daily funiture vase base on mood</a>
+                            </div>
+                            <div class="group-hover:text-pink-500">
+                                <a href="https://www.pexels.com/@flora-westbrook-820907" class="text-sm md:text-base hover:underline">Photo by Flora Westbrook from Pexels</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="florist-tricks-card" class="w-56 md:w-72 m-8 lg:m-0 lg:w-1/3 group shadow-xl hover:shadow-2xl">
+                        <img src="./img/care-for-plant.jpg" alt="flower image">
+                        <div class="flex-col text-center p-4 space-y-4">
+                            <div class="group-hover:underline">
+                                <a href="#" class="text-lg md:text-2xl text-center">Care for plant in different situations</a>
+                            </div>
+                            <div class="group-hover:text-pink-500">
+                                <a href="https://www.pexels.com/@daria" class="text-sm md:text-base hover:underline">Photo by Daria Shevtsova from Pexels </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Intro Sentences Image -->
+            <div class="px-4 md:px-8 lg:px-16 xl:px-24 flex justify-between space-x-4 md:space-x-12 lg:space-x-20 items-center pt-40">
+                <div id="intro-sen-img" class="relative w-1/3">
+                    <img src="./img/for-sentences.jpg" alt="">
+
+                </div>
+                <div class="w-2/3 space-y-2 md:space-y-8">
+                    <h1 class="text-lg md:text-2xl text-gray-800 font-bold">Although Houseplants are not important at home, </h1>
+                    <h1 class="text-lg md:text-4xl lg:text-5xl text-gray-800 font-bold">if we have It's <span class="text-pink-500">PERFECT</span></h1>
+                    <div>
+                        <a href="https://www.pexels.com/@kseniachernaya" class="text-sm md:text-base underline text-gray-800">
+                            Photo by Ksenia Chernaya from Pexels
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Florist Manager -->
+            <div id="blog" class="px-4 md:px-8 lg:px-16 xl:px-24 pt-40 flex flex-wrap lg:flex-nowrap justify-center lg:space-x-16 lg:items-center">
+                <div id="florist-card-container" class="w-56 md:w-72 m-8 lg:m-0 lg:w-1/3 overflow-hidden group h-auto relative flex justify-center items-center">
+                    <img src="./img/florist-girl.jpg" alt="" id="">
+                    <div id="about-me-box" class="opacity-80 absolute  transition duration-500">
+                        <a href="#" class="text-white bg-pink-500 rounded-md py-2 px-4 lg:py-4 lg:px-8">about me</a>
+                    </div>
+                    <div class="absolute top-0 right-0 bg-pink-500 opacity-70"><a href="#" class="text-xs md:text-sm text-white">Photo by Amina Filkins from Pexels</a></div>
+                    <div id="contact-icons" class="bottom-0 absolute flex justify-center items-center transition duration-500 space-x-8">
+                        <div class="contact-icon h-8 w-8 md:h-12 md:w-12 flex items-center justify-center rounded-full bg-white hover:bg-pink-500 hover:text-white transition duration-200"><a href="#" class="text-base md:text-xl"><i class="fab fa-facebook-f"></i></a></div>
+                        <div class="contact-icon h-8 w-8 md:h-12 md:w-12 flex items-center justify-center rounded-full bg-white hover:bg-pink-500 hover:text-white transition duration-200"><a href="#" class="text-base md:text-xl"><i class="fab fa-twitter"></i></a></div>
+                        <div class="contact-icon h-8 w-8 md:h-12 md:w-12 flex items-center justify-center rounded-full bg-white hover:bg-pink-500 hover:text-white transition duration-200"><a href="#" class="text-base md:text-xl"><i class="fab fa-instagram"></i></a></div>
+                    </div>
+                </div>
+                <div id="florist-card-container" class="w-56 md:w-72 m-8 lg:m-0 lg:w-1/3 overflow-hidden group h-auto relative flex justify-center items-center">
+                    <img src="./img/girl-with-whsh.jpg" alt="" id="">
+                    <div id="about-me-box" class="opacity-80 absolute  transition duration-500">
+                        <a href="#" class="text-white bg-pink-500 rounded-md py-2 px-4 lg:py-4 lg:px-8">about me</a>
+                    </div>
+                    <div class="absolute top-0 right-0 bg-pink-500 opacity-70"><a href="#" class="text-xs md:text-sm text-white">Photo by cottonbro from Pexels</a></div>
+                    <div id="contact-icons" class="bottom-0 absolute flex justify-center items-center transition duration-500 space-x-8">
+                        <div class="contact-icon h-8 w-8 md:h-12 md:w-12 flex items-center justify-center rounded-full bg-white hover:bg-pink-500 hover:text-white transition duration-200 "><a href="#" class="text-base md:text-xl"><i class="fab fa-facebook-f"></i></a></div>
+                        <div class="contact-icon h-8 w-8 md:h-12 md:w-12 flex items-center justify-center rounded-full bg-white hover:bg-pink-500 hover:text-white transition duration-200 "><a href="#" class="text-base md:text-xl"><i class="fab fa-twitter"></i></a></div>
+                        <div class="contact-icon h-8 w-8 md:h-12 md:w-12 flex items-center justify-center rounded-full bg-white hover:bg-pink-500 hover:text-white transition duration-200 "><a href="#" class="text-base md:text-xl"><i class="fab fa-instagram"></i></a></div>
+                    </div>
+                </div>
+                <div id="florist-card-container" class="w-56 md:w-72 m-8 lg:m-0 lg:w-1/3 overflow-hidden group h-auto relative flex justify-center items-center">
+                    <img src="./img/girl-with-flower.jpg" alt="" id="">
+                    <div id="about-me-box" class="opacity-80 absolute  transition duration-500">
+                        <a href="#" class="text-white bg-pink-500 rounded-md py-2 px-4 lg:py-4 lg:px-8">about me</a>
+                    </div>
+                    <div class="absolute top-0 right-0 bg-pink-500 opacity-70"><a href="#" class="text-xs md:text-sm text-white">Photo by Katerina Holmes from Pexels</a></div>
+                    <div id="contact-icons" class="bottom-0 absolute flex justify-center items-center transition duration-500 space-x-8">
+                        <div class="contact-icon h-8 w-8 md:h-12 md:w-12 flex items-center justify-center rounded-full bg-white hover:bg-pink-500 hover:text-white transition duration-200 "><a href="#" class="text-base md:text-xl"><i class="fab fa-facebook-f"></i></a></div>
+                        <div class="contact-icon h-8 w-8 md:h-12 md:w-12 flex items-center justify-center rounded-full bg-white hover:bg-pink-500 hover:text-white transition duration-200 "><a href="#" class="text-base md:text-xl"><i class="fab fa-twitter"></i></a></div>
+                        <div class="contact-icon h-8 w-8 md:h-12 md:w-12 flex items-center justify-center rounded-full bg-white hover:bg-pink-500 hover:text-white transition duration-200 "><a href="#" class="text-base md:text-xl"><i class="fab fa-instagram"></i></a></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Get In touch -->
+            <div id="contact" class="py-40 px-4 md:px-8 lg:px-16 xl:px-24 md:flex md:items-center justify-center md:space-x-20 space-y-12 md:space-y-0">
+                <div class="w-full md:w-1/2 flex-col space-y-8 justify-center text-center md:text-left">
+                    <h1 class=" text-2xl md:text-4xl lg:text-5xl text-pink-500 font-bold">Get In Touch</h1>
+                    <div class="flex-col space-y-4 text-gray-800 justify-center">
+                        <p class="text-sm md:text-base">69 North Cleveland Street, Memphis,USA.</p>
+                        <p class="text-sm md:text-base">(123) 8111 9210 - (012) 1111 6868</p>
+                        <p class="text-sm md:text-base">Florisr@supportthem.com</p>
+                    </div>
+                    <div class="flex space-x-4 justify-center md:justify-start">
+                        <div class="h-9 w-9 flex items-center justify-center rounded-full bg-pink-500 hover:bg-pink-600 hover:shadow-inner text-white transition duration-200 "><a href="#" class="text-xl"><i class="fab fa-facebook-f"></i></a></div>
+                        <div class="h-9 w-9 flex items-center justify-center rounded-full bg-pink-500 hover:bg-pink-600 hover:shadow-inner text-white transition duration-200 "><a href="#" class="text-xl"><i class="fab fa-twitter"></i></a></div>
+                        <div class="h-9 w-9 flex items-center justify-center rounded-full bg-pink-500 hover:bg-pink-600 hover:shadow-inner text-white transition duration-200 "><a href="#" class="text-xl"><i class="fab fa-instagram"></i></a></div>
+                    </div>
+                </div>
+                <div class="flex-col space-y-8 w-full md:w-1/2">
+                    <h1 class="text-2xl text-gray-800 font-bold">Message to us</h1>
+                    <input placeholder="Email" type="text" class="w-full text-gray-800 px-4 py-2 focus:border-4 focus:outline-none border-pink-500 border-2 rounded-md">
+                    <textarea placeholder="Message" name="" id="" rows="4" class="w-full block resize-none px-4 py-2 focus:border-4 focus:outline-none border-pink-500 border-2 rounded-md"></textarea>
+                    <button class="shadow-lg focus:outline-none bg-pink-500 text-red-100 px-6 py-3 rounded-full hover:bg-pink-600">
+                        SEND
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script >
+        /* HAMBURGER MENU */
+        function openMenu(){
+            var sidebar = document.getElementById('sidebar');
+            var container = document.getElementById('container');
+            var overlay = document.getElementById("overlay")
+            sidebar.style.transform = 'translateX(0)';
+            overlay.style.display = "block";
+            /* else{
+                sidebar.style.transform = 'translateX(-240px)';
+                container.style.opacity = '1'
+                menuOpen = false;
+            } */
+        }
+        function closeMenu(){
+            var sidebar = document.getElementById('sidebar');
+            var overlay = document.getElementById("overlay")
+            sidebar.style.transform = 'translateX(-240px)';
+            overlay.style.display = "none";
+        }
+
+        /* Background Image SlideShow */
+        var slidenum = 0;
+        function changeSlide(){
+            if(slidenum === 0){
+                document.getElementById("header").style.backgroundImage = "url('./img/violet-flower.jpg')";
+                document.getElementById("bg-img-text").innerHTML = "Photo by Jess Bailey Designs from Pexels";
+                slidenum = 1;
+            }else{
+                document.getElementById("header").style.backgroundImage = "url('./img/orange-flower.jpg')";
+                document.getElementById("bg-img-text").innerHTML = "Photo by Karolina Grabowska from Pexels";
+                slidenum = 0;
+            }
+        }
+        setInterval(() => {
+            changeSlide();
+        }, 10000);
+    </script>
+</body>
+</html>
+
+<!--     <div class="container w-40 h-40 bg-blue-200 flex justify-center items-center">
+        <div class="box w-full h-20 bg-red-600 transition duration-500"></div>
+    </div> -->
